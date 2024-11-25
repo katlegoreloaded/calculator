@@ -1,20 +1,15 @@
+let display = document.getElementById("display");
+
+
 function backspace() {
-	let display = document.getElementById("display");
 	display.value = display.value.slice(0, -1);
 }
 
 function calculate() {
-	let display = document.getElementById("display");
 	let expression = display.value;
 	let result;
 
 	try {
-		// Convert trigonometric function inputs from degrees to radians
-		expression = expression.replace(/sin\(/g, 'sin(' + Math.PI / 180 + '*');
-		expression = expression.replace(/cos\(/g, 'cos(' + Math.PI / 180 + '*');
-		expression = expression.replace(/tan\(/g, 'tan(' + Math.PI / 180 + '*');
-
-		// result = math.evaluate(expression);
 		result = safeEvaluate(expression);
 		display.value = result;
 	} catch (error) {
@@ -23,29 +18,40 @@ function calculate() {
 }
 
 function squareRoot() {
-	let display = document.getElementById("display");
 	display.value += "Math.sqrt(";
 }
 
-function base10Log() {
-	let display = document.getElementById("display");
-	display.value += "log(";
-}
-
-function pi() {
-	let display = document.getElementById("display");
-	display.value += "Math.PI";
-}
-
-function e() {
-	let display = document.getElementById("display");
-	display.value += "Math.E";
+function vanillaLog(){
+	display.value +="Math.log("
 }
 
 function power() {
-	let display = document.getElementById("display");
 	display.value += "**(";
 }
+
+function sin(){
+	display.value += "Math.sin("
+}
+
+function cos(){
+	display.value += "Math.cos("
+}
+
+function tan(){
+	display.value +="Math.tan("
+}
+function exp(){
+	display.value +="Math.exp("
+}
+
+
+// function factorial(expression)
+// {
+//     var rval=1;
+//     for (var i = 2; i <= expression; i++)
+//         rval = rval * i;
+//     return rval;
+// }
 
 function safeEvaluate(expression) {
     try {
@@ -54,3 +60,6 @@ function safeEvaluate(expression) {
         return "Invalid Expression";
     }
 }
+
+function preventKeyboardInput(event) {
+	event.preventDefault()};
