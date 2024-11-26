@@ -31,9 +31,7 @@ function calculate() {
     }
 }
 
-function baseLog10() {
-    display.value += "log10(";
-}
+
 
 function squareRoot(expression) {
     const n = Number(expression);
@@ -51,7 +49,7 @@ function root() {
 
 function cubeRoot(expression){
 const n = Number(expression);
-if (isNaN(n)){
+if (NumberisNaN(n)){ //use NumberisNaN instead of isNaN
 	return "Error";
 }
 return Math.cbrt(n);
@@ -61,30 +59,6 @@ function root3(){
 	const input = display.value; 
     const ans = cubeRoot(input); 
     display.value = ans;
-}
-
-function vanillaLog() {
-    display.value += "log(";
-}
-
-function power() {
-    display.value += "**(";
-}
-
-function sin() {
-    display.value += "sin(";
-}
-
-function cos() {
-    display.value += "cos(";
-}
-
-function tan() {
-    display.value += "tan(";
-}
-
-function exp() {
-    display.value += "exp(";
 }
 
 function factorial(expression) {
@@ -102,7 +76,7 @@ function fact() {
     display.value = ans;
 }
 
-// Prevent direct keyboard input in the display
+
 function preventKeyboardInput(event) {
     event.preventDefault();
 }

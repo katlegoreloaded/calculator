@@ -42,7 +42,7 @@
 				<td><input type="button" value="%"
 						onclick="display.value += '%'"></td>
 				<td><input type="button" value="cos"
-						onclick="cos()"></td>
+						onclick="display.value += 'cos('"></td>
 			</tr>
 			<tr>
 				<td><input class="number" type="button" value="7"
@@ -56,7 +56,7 @@
 				<td><input type="button" value="!"
 						onclick="fact()"></td>
 				<td><input type="button" value="sin"
-						onclick="sin()"></td>
+						onclick="display.value += 'sin('"></td>
 			</tr>
 			<tr>
 				<td><input type="button" value="."
@@ -70,7 +70,7 @@
 				<td><input type="button" value="÷"
 						onclick="display.value += '/'"></td>
 				<td><input type="button" value="tan"
-						onclick="tan()"></td>
+						onclick="display.value += 'tan('"></td>
 			</tr>
 			<tr>
 				<td><input type="button" value="e"
@@ -78,13 +78,13 @@
 				<td><input type="button" value="π"
 						onclick="display.value += Math.PI"></td>
 				<td><input type="button" value="x^□"
-						onclick="power()"></td>
+						onclick="display.value += '**('"></td>
 				<td><input type="button" value="("
 						onclick="display.value += '('"></td>
 				<td><input type="button" value=")"
 						onclick="display.value += ')'"></td>
 				<td><input type="button" value="log"
-						onclick="vanillaLog()"></td>
+						onclick="display.value += 'log('"></td>
 			</tr>
 			<tr>
 				<td><input type="button" value="√"
@@ -92,13 +92,13 @@
 				<td><input type="button" value="ln(2)"
 						onclick="display.value += Math.LN2"></td>
 				<td><input type="button" value="log(10)"
-						onclick="baseLog10()"></td>
+						onclick="display.value += 'log10('"></td>
 				<td><input type="button" value="log(2)e"
 						onclick="display.value += Math.LOG2E"></td>
 				<td><input type="button" value="l10e"
 						onclick="display.value += Math.LOG10E"></td>
 				<td><input type="button" value="e^"
-						onclick="exp()"></td>
+						onclick="display.value += 'exp('"></td>
 			</tr>
 		</table>
 	</form>
