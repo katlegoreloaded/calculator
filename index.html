@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		Scientific Calculator using HTML, CSS and Js
-	</title>
+
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -56,7 +54,7 @@
 				<td><input type="button" value="x"
 						onclick="display.value += '*'"></td>
 				<td><input type="button" value="!"
-						onclick="display.value += '!'"></td>
+						onclick="fact()"></td>
 				<td><input type="button" value="sin"
 						onclick="sin()"></td>
 			</tr>
@@ -94,7 +92,7 @@
 				<td><input type="button" value="ln(2)"
 						onclick="display.value += Math.LN2"></td>
 				<td><input type="button" value="log(10)"
-						onclick="base10Log()"></td>
+						onclick="baseLog10()"></td>
 				<td><input type="button" value="l2e"
 						onclick="display.value += Math.LOG2E"></td>
 				<td><input type="button" value="l10e"

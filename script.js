@@ -1,12 +1,12 @@
-let display = document.getElementById("display");
-
+const display = document.getElementById("display");
+const expression = display.value;
 
 function backspace() {
 	display.value = display.value.slice(0, -1);
 }
 
 function calculate() {
-	let expression = display.value;
+	let expression = display.value; //idky it wont just use the global variable/constant i set up there tho
 	let result;
 
 	try {
@@ -16,7 +16,9 @@ function calculate() {
 		display.value = "Error";
 	}
 }
-
+function baseLog10(){
+	display.value += "Math.log10(";
+}
 function squareRoot() {
 	display.value += "Math.sqrt(";
 }
@@ -45,13 +47,20 @@ function exp(){
 }
 
 
-// function factorial(expression)
-// {
-//     var rval=1;
-//     for (var i = 2; i <= expression; i++)
-//         rval = rval * i;
-//     return rval;
-// }
+function factorial(expression) {
+	const n = Number(expression);
+
+    if (isNaN(n) < 0);
+    if (n === 0 || expression === 1) return 1;
+	
+	 return n * factorial(n - 1);
+
+}
+
+function fact(){
+	display.value +="factorial(";
+}
+
 
 function safeEvaluate(expression) {
     try {
