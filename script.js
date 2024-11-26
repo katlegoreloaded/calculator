@@ -49,6 +49,19 @@ function root() {
     display.value = ans;
 }
 
+function cubeRoot(expression){
+const n = Number(expression);
+if (isNaN(n)){
+	return "Error";
+}
+return Math.cbrt(n);
+}
+
+function root3(){
+	const input = display.value; 
+    const ans = cubeRoot(input); 
+    display.value = ans;
+}
 
 function vanillaLog() {
     display.value += "log(";
