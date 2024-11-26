@@ -1,51 +1,66 @@
+const display = document.getElementById("display");
+const expression = display.value;
+
 function backspace() {
-	let display = document.getElementById("display");
 	display.value = display.value.slice(0, -1);
 }
 
 function calculate() {
-	let display = document.getElementById("display");
-	let expression = display.value;
+	let expression = display.value; //idky it wont just use the global variable/constant i set up there tho
 	let result;
 
 	try {
-		// Convert trigonometric function inputs from degrees to radians
-		expression = expression.replace(/sin\(/g, 'sin(' + Math.PI / 180 + '*');
-		expression = expression.replace(/cos\(/g, 'cos(' + Math.PI / 180 + '*');
-		expression = expression.replace(/tan\(/g, 'tan(' + Math.PI / 180 + '*');
-
-		// result = math.evaluate(expression);
 		result = safeEvaluate(expression);
 		display.value = result;
 	} catch (error) {
 		display.value = "Error";
 	}
 }
-
+function baseLog10(){
+	display.value += "Math.log10(";
+}
 function squareRoot() {
-	let display = document.getElementById("display");
 	display.value += "Math.sqrt(";
 }
 
-function base10Log() {
-	let display = document.getElementById("display");
-	display.value += "log(";
-}
-
-function pi() {
-	let display = document.getElementById("display");
-	display.value += "Math.PI";
-}
-
-function e() {
-	let display = document.getElementById("display");
-	display.value += "Math.E";
+function vanillaLog(){
+	display.value +="Math.log("
 }
 
 function power() {
-	let display = document.getElementById("display");
 	display.value += "**(";
 }
+
+function sin(){
+	display.value += "Math.sin("
+}
+
+function cos(){
+	display.value += "Math.cos("
+}
+
+function tan(){
+	display.value +="Math.tan("
+}
+function exp(){
+	display.value +="Math.exp("
+}
+
+
+function factorial(expression) {
+	const n = Number(expression);
+
+    if (isNaN(n) < 0);
+    if (n === 0 || expression === 1) return 1;
+	
+	 return n * factorial(n - 1);
+
+}
+
+function fact(){
+	display.value +="factorial(";
+}
+
 
 function safeEvaluate(expression) {
     try {
@@ -54,3 +69,6 @@ function safeEvaluate(expression) {
         return "Invalid Expression";
     }
 }
+
+function preventKeyboardInput(event) {
+	event.preventDefault()};
